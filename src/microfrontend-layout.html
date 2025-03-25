@@ -1,17 +1,18 @@
 <single-spa-router>
   <main>
     <redirect from="/" to="/login"></redirect>
-    <!-- products -->
-      <route path="/login">
-        <application name="@single-spa/login"></application>
-      <!-- </route> -->
-      <!-- <route path="/menu">
-        <application name="@single-spa/menu"></application> -->
-        <!-- <route path=":id">
-          <application name="@single-spa/related-products"></application>
-        </route> -->
-      </route>
-    <!-- products -->
+
+    <!-- LOGIN MF -->
+    <route path="/login">
+      <application name="@single-spa/login"></application>
+    </route>
+
+    <!-- MENU MF -->
+    <route path="/menu">
+      <application name="@single-spa/menu"></application>
+    </route>
+
+    <!-- RUTA DEFAULT / ERROR 404 -->
     <route default>
       <h1>404 Not Found</h1>
     </route>
