@@ -14,6 +14,27 @@ module.exports = (webpackConfigEnv, argv) => {
 
   return merge(defaultConfig, {
     // modify the webpack config however you'd like to by adding to this object
+    module: {
+      rules: [
+        // Regla para archivos de fuentes (woff, woff2, etc.)
+        {
+          test: /\.(woff|woff2|eot|ttf|svg)$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'fonts/[name][ext]'
+          }
+        },
+        // Regla para archivos CSS
+        {
+          test: /\.css$/i,
+          exclude: /primeicons\.css$/,
+          use: [
+            'style-loader',
+            'css-loader'
+          ]
+        }
+      ]
+    },
     plugins: [
       new HtmlWebpackPlugin({
         inject: false,
@@ -24,5 +45,11 @@ module.exports = (webpackConfigEnv, argv) => {
         },
       }),
     ],
+    devServer: {
+      historyApiFallback: {
+        index: '/index.html',
+      },
+      port: 9000, // Cambia si usas otro puerto
+    }
   });
 };
