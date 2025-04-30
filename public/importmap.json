@@ -5,6 +5,7 @@
     "mf-sidebar": "//localhost:1004/main.js",
     "mf-com-consultas": "//localhost:1001/main.js",
     "mf-ope-reclamos": "//localhost:1002/main.js",
-    "mf-com-comercializacion": "//localhost:1003/main.js"
+    "mf-com-comercializacion": "//localhost:1003/main.js",
+    "mf-seguridad": "//localhost:1005/main.js"
   }
 }
