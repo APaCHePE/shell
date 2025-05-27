@@ -1,56 +1,60 @@
 <single-spa-router mode="history">
-  <main>
-    <redirect from="/" to="/login"></redirect>
-    <route path="/login">
-      <application name="mf-authentication"></application>
-    </route>
-    <route path="/public">
-      <application name="mf-authentication"></application>
-    </route>
+  <div class="layout-container layout-static layout-sidebar-dark">
+    <div class="layout-wrapper">
+      <main>
+        <redirect from="/" to="/login"></redirect>
+        <route path="/login">
+          <application name="mf-authentication"></application>
+        </route>
+        <route path="/public">
+          <application name="mf-authentication"></application>
+        </route>
 
-    <route path="/comercial">
-      <application name="mf-authentication"></application>
-      <div style="display: flex;">
-        <application name="mf-sidebar"></application>
-        <div style="flex: 1; overflow: auto">
-          <route path="/consultas">
-            <application name="mf-com-consultas"></application>
-          </route>
-          <route path="/comercializacion">
-            <application name="mf-com-comercializacion"></application>
-          </route>
-        </div>
-      </div>
-    </route>
-    <route path="/operaciones">
-      <application name="mf-authentication"></application>
-      <div style="display: flex; height: 100%; width: 100%; overflow: hidden; margin-top: 4rem;">
-        <div>
-          <application name="mf-sidebar"></application>
-        </div>
-        <div style="flex: 1; overflow: auto">
-          <route path="/reclamos">
-            <application name="mf-ope-reclamos"></application>
-          </route>
-        </div>
-      </div>
-    </route>
-    <route path="/seguridad">
-      <application name="mf-authentication"></application>
-      <div style="display: flex; height: 100%; width: 100%; overflow: hidden;">
-        <div>
-          <application name="mf-sidebar"></application>
-        </div>
-        <div style="flex: 1; overflow: auto">
-          <application name="mf-seguridad"></application>
-        </div>
-      </div>
-    </route>
-    <route default>
-      <div style="padding: 20px;">
-        <h1>Página no encontrada</h1>
-        <p>La página que buscas no existe o no tienes permisos para acceder.</p>
-      </div>
-    </route>
-  </main>
+        <route path="/comercial">
+          <application name="mf-authentication"></application>
+          <div style="display: flex;">
+            <application name="mf-sidebar"></application>
+            <div style="flex: 1; overflow: auto">
+              <route path="/consultas">
+                <application name="mf-com-consultas"></application>
+              </route>
+              <route path="/comercializacion">
+                <application name="mf-com-comercializacion"></application>
+              </route>
+            </div>
+          </div>
+        </route>
+        <route path="/operaciones">
+          <application name="mf-authentication"></application>
+          <div style="display: flex; height: 100%; width: 100%; overflow: hidden; margin-top: 4rem;">
+            <div>
+              <application name="mf-sidebar"></application>
+            </div>
+            <div style="flex: 1; overflow: auto">
+              <route path="/reclamos">
+                <application name="mf-ope-reclamos"></application>
+              </route>
+            </div>
+          </div>
+        </route>
+        <route path="/seguridad">
+          <application name="mf-authentication"></application>
+          <div style="display: flex; height: 100%; width: 100%; overflow: hidden;">
+            <div>
+              <application name="mf-sidebar"></application>
+            </div>
+            <div style="flex: 1; overflow: auto">
+              <application name="mf-seguridad"></application>
+            </div>
+          </div>
+        </route>
+        <route default>
+          <div style="padding: 20px;">
+            <h1>Página no encontrada</h1>
+            <p>La página que buscas no existe o no tienes permisos para acceder.</p>
+          </div>
+        </route>
+      </main>
+    </div>
+  </div>
 </single-spa-router>

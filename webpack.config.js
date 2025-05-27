@@ -1,4 +1,6 @@
-const { merge } = require("webpack-merge");
+const {
+  merge
+} = require("webpack-merge");
 const singleSpaDefaults = require("webpack-config-single-spa-ts");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -32,7 +34,11 @@ module.exports = (webpackConfigEnv, argv) => {
             'style-loader',
             'css-loader'
           ]
-        }
+        },
+        {
+          test: /\.scss$/i,
+          use: ["style-loader", "css-loader", "sass-loader"],
+        },
       ]
     },
     plugins: [

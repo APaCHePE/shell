@@ -6,6 +6,7 @@ import {
   constructRoutes,
   constructLayoutEngine,
 } from "single-spa-layout";
+import "./styles.scss";
 
 import microfrontendLayout from "./microfrontend-layout.html";
 
