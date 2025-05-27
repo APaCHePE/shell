@@ -20,6 +20,7 @@ const layoutEngine = constructLayoutEngine({ routes, applications });
 
 applications.forEach(registerApplication);
 layoutEngine.activate();
+
 addErrorHandler((err) => {
   if (
     err.appOrParcelName === "mf-authetication" &&
@@ -30,4 +31,5 @@ addErrorHandler((err) => {
   }
   return true;
 });
+
 start();

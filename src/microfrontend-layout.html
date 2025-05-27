@@ -1,5 +1,6 @@
 <single-spa-router mode="history">
   <main>
+    <redirect from="/" to="/login"></redirect>
     <route path="/login">
       <application name="mf-authentication"></application>
     </route>
@@ -9,7 +10,7 @@
 
     <route path="/comercial">
       <application name="mf-authentication"></application>
-      <div style="display: flex; height: 100%; width: 100%; overflow: hidden; margin-top: 4rem;">
+      <div style="display: flex;">
         <application name="mf-sidebar"></application>
         <div style="flex: 1; overflow: auto">
           <route path="/consultas">
@@ -36,7 +37,7 @@
     </route>
     <route path="/seguridad">
       <application name="mf-authentication"></application>
-      <div style="display: flex; height: 100%; width: 100%; overflow: hidden; margin-top: 4rem;">
+      <div style="display: flex; height: 100%; width: 100%; overflow: hidden;">
         <div>
           <application name="mf-sidebar"></application>
         </div>
