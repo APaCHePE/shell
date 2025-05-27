@@ -55,9 +55,22 @@
   </noscript>
   <script>
     System.import('@shell/root-config');
-    window.addEventListener('single-spa:first-mount', () => {
-      const loader = document.getElementById('global-loader');
-      if (loader) loader.style.display = 'none';
+    window.addEventListener('single-spa:first-mount', async () => {
+    const loader = document.getElementById('global-loader');
+    if (loader) loader.style.display = 'none';
+
+    try {
+    const { getContainerClass } = await System.import('@test/mf-utils-modules');
+    const container = document.querySelector('.layout-container');
+    if (!container) return;
+
+    const classes = getContainerClass();
+    for (const [className, isActive] of Object.entries(classes)) {
+    container.classList.toggle(className, isActive);
+    }
+    } catch (error) {
+    console.error('Error applying layout container classes:', error);
+    }
     });
   </script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
