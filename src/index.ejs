@@ -86,16 +86,19 @@
           if (isActive) container.classList.add(cls);
         }
 
-        // Sincronizar modo oscuro/claro en el shell
-        const { getLayoutConfig } = await System.import('@test/mf-utils-modules');
-        const config = getLayoutConfig();
-        if (config.darkTheme) {
-          document.documentElement.classList.add('app-dark');
-        } else {
-          document.documentElement.classList.remove('app-dark');
-        }
+        // Listener para actualizar la paleta de surface
       } catch (error) {
         console.error('Error applying updated layout container classes:', error);
+      }
+    });
+
+    // Surface palette event listener: aplica la paleta al document.documentElement
+    window.addEventListener('surface-updated', (e) => {
+      const palette = e.detail;
+      if (!palette) return;
+      const root = document.documentElement;
+      for (const [key, value] of Object.entries(palette)) {
+        root.style.setProperty(`--surface-${key}`, value);
       }
     });
   </script>
