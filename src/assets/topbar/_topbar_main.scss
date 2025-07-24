@@ -9,10 +9,10 @@
     display: flex;
     color: var(--topbar-item-text-color);
     background-color: var(--topbar-bg);
-    box-shadow:
-        0px 1px 2px rgb(0 0 0 / 12%),
-        0px 4px 5px rgb(0 0 0 / 14%),
-        0px 2px 4px -1px rgb(0 0 0 / 20%);
+    // box-shadow:
+    //     0px 1px 2px rgb(0 0 0 / 12%),
+    //     0px 4px 5px rgb(0 0 0 / 14%),
+    //     0px 2px 4px -1px rgb(0 0 0 / 20%);
 
     ul {
         margin: 0;
@@ -84,21 +84,29 @@
         justify-content: space-between;
         padding: 0 2rem;
 
-        .layout-megamenu {
+        .layout-megamenu ,
+        .p-menubar.layout-megamenu {
             background: none;
+            border: none !important;
 
             .p-megamenu-submenu-icon,
             .p-megamenu-root-list > .p-megamenu-item > .p-megamenu-item-content > .p-megamenu-item-link,
             .p-megamenu-item:not(.p-disabled) > .p-megamenu-item-content:hover .p-megamenu-submenu-icon,
             .p-megamenu-root-list > .p-megamenu-item.p-focus > .p-megamenu-item-content,
-            .p-megamenu-root-list > .p-megamenu-item.p-focus > .p-megamenu-item-content .p-megamenu-submenu-icon {
+            .p-megamenu-root-list > .p-megamenu-item.p-focus > .p-megamenu-item-content .p-megamenu-submenu-icon  
+            .p-menubar-root-list > .p-menubar-item > .p-menubar-item-content > .p-menubar-item-link,
+            .p-menubar-item:not(.p-disabled) > .p-menubar-item-content:hover .p-menubar-submenu-icon {
                 color: var(--topbar-item-text-color);
+                // padding: 0.75rem 0.5rem;
             }
 
             .p-megamenu-root-list > .p-megamenu-item:not(.p-disabled) > .p-megamenu-item-content:hover,
             .p-megamenu-root-list > .p-megamenu-item-active > .p-megamenu-item-content,
-            .p-megamenu-root-list > .p-megamenu-item.p-focus > .p-megamenu-item-content {
-                color: unset;
+            .p-megamenu-root-list > .p-megamenu-item.p-focus > .p-megamenu-item-content,
+            .p-menubar-root-list > .p-menubar-item:not(.p-disabled) > .p-menubar-item-content:hover,
+            .p-menubar-root-list > .p-menubar-item-active > .p-menubar-item-content,
+            .p-menubar-root-list > .p-menubar-item.p-focus > .p-menubar-item-content {
+                color: var(--topbar-item-text-color);
                 background: unset;
             }
         }
